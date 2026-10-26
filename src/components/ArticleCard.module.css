@@ -1,0 +1,99 @@
+/* Editoryal makale kartı: kutu, çerçeve ve gölge yok; görsel ve metin sayfa zemininde. */
+.card {
+  height: 100%;
+  min-width: 0;
+}
+
+.anchor {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: inherit;
+}
+
+.media {
+  --ratio: 16 / 10;
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-alt);
+}
+
+.media img {
+  transition: transform 1200ms var(--ease-out);
+}
+
+.anchor:hover .media img {
+  transform: scale(1.045);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding-top: 1.25rem;
+}
+
+.date {
+  margin-bottom: 0.75rem;
+  color: var(--color-text-light);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Başlık altı çizgisi soldan sağa dolar. */
+.title {
+  font-size: var(--step-2);
+  line-height: 1.2;
+  color: var(--color-heading);
+  overflow-wrap: break-word;
+  background: linear-gradient(currentColor, currentColor) no-repeat 0 100% / 0% 1px;
+  transition: background-size var(--dur-base) var(--ease-out);
+}
+
+.anchor:hover .title {
+  background-size: 100% 1px;
+}
+
+.summary {
+  composes: clamp from "../styles/card.module.css";
+  --lines: 3;
+  margin-top: 0.75rem;
+  color: var(--color-text-light);
+  line-height: 1.65;
+  flex-grow: 1;
+}
+
+.readMore {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  align-self: flex-start;
+  margin-top: 1.25rem;
+  padding-block: 0.25em;
+  color: var(--color-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: linear-gradient(currentColor, currentColor) no-repeat 0 100% / 0% 1px;
+  transition: background-size var(--dur-base) var(--ease-out);
+}
+
+.readMore svg {
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+.anchor:hover .readMore {
+  background-size: 100% 1px;
+}
+
+.anchor:hover .readMore svg {
+  transform: translateX(4px);
+}
+
+/* Görselsiz kart: üstte ince çizgi, metin doğrudan başlar. */
+.textOnly {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-line-strong);
+}

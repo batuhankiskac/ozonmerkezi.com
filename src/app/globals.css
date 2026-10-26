@@ -1,0 +1,266 @@
+/* Ozon Merkezi: Prof. Dr. Muharrem Kıskaç sitelerinin ortak yapısı, siteye özel
+   palet (çelik mavisi ve buz: buz mavisi zemin, çelik mavisi ana renk, açık gök vurgu). Başlıklar Newsreader, metin Geist. */
+:root {
+  --color-bg: #F2F6F8;
+  --color-bg-rgb: 242 246 248;
+  --color-bg-alt: #E6EEF2;
+  --color-surface: #FFFFFF;
+  --color-text: #13202B;
+  --color-ink-rgb: 19 32 43;
+  --color-heading: #13202B;
+  --color-text-light: #55626C;
+  --color-muted: #55626C;
+  --color-line: rgb(19 32 43 / 12%);
+  --color-line-strong: rgb(19 32 43 / 26%);
+
+  /* Vurgu rengi; metin olarak yalnız --color-accent-ink kullanılır. */
+  --color-accent: #6FA8C8;
+  --color-accent-ink: #2F6F92;
+  --color-accent-soft: #DCEBF3;
+  --color-accent-on-dark: #9CC8DF;
+  --color-accent-light: #DCEBF3;
+  --color-secondary: #2F6F92;
+  --color-selection: #DCEBF3;
+  --gold: #6FA8C8;
+  --gold-light: #9CC8DF;
+
+  --color-on-primary: #F2F6F8;
+  --color-on-dark: #EEF4F7;
+  --color-on-dark-muted: rgb(238 244 247 / 72%);
+  --color-input-border: #84909A;
+
+  --heading-weight: 400;
+  --heading-tracking: -0.015em;
+  --display-tracking: -0.03em;
+
+  --color-primary: #24547A;
+  --color-primary-rgb: 36 84 122;
+  --color-primary-dark: #1A4060;
+  --color-primary-subtle-bg: #DCE8F0;
+  --color-dark: #0F2436;
+}
+
+:root {
+  /* Ortak ölçüler: tipografi ölçeği, boşluklar ve hareket. */
+  --step--1: 0.875rem;
+  --step-0: 1.0625rem;
+  --step-1: clamp(1.125rem, 1.08rem + 0.2vw, 1.25rem);
+  --step-2: clamp(1.3125rem, 1.2rem + 0.45vw, 1.5625rem);
+  --step-3: clamp(1.625rem, 1.4rem + 0.9vw, 2.0625rem);
+  --step-4: clamp(2rem, 1.6rem + 1.6vw, 3rem);
+  --step-5: clamp(2.375rem, 1.75rem + 2.6vw, 4.375rem);
+
+  --container: 1240px;
+  --container-narrow: 760px;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --section-y: clamp(4.5rem, 9vw, 8.5rem);
+  --header-h: 76px;
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 28px;
+  --radius-pill: 999px;
+
+  --color-border: var(--color-line);
+  --color-primary-border: rgb(var(--color-primary-rgb) / 22%);
+  --color-danger: #b42318;
+  --color-danger-bg: #fef3f2;
+
+  --shadow-sm: 0 1px 2px rgb(var(--color-ink-rgb) / 5%);
+  --shadow-md: 0 1px 2px rgb(var(--color-ink-rgb) / 4%), 0 10px 28px -12px rgb(var(--color-ink-rgb) / 16%);
+  --shadow-lg: 0 1px 2px rgb(var(--color-ink-rgb) / 4%), 0 24px 48px -20px rgb(var(--color-ink-rgb) / 24%);
+  --shadow-button: 0 10px 24px -12px rgb(var(--color-primary-rgb) / 60%);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 200ms;
+  --dur-base: 450ms;
+  --dur-reveal: 1000ms;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 1rem);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  /* Eski modüller hâlâ bu adları kullanabilir. */
+  --font-playfair: var(--font-display);
+  --font-outfit: var(--font-body);
+
+  max-width: 100%;
+  min-height: 100dvh;
+  overflow-x: clip;
+  color: var(--color-text);
+  background: var(--color-bg);
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: var(--step-0);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: var(--heading-weight, 500);
+  color: var(--color-heading);
+  line-height: 1.12;
+  letter-spacing: var(--heading-tracking, -0.02em);
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+::selection {
+  background: var(--color-selection);
+  color: var(--color-text);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Yalnız ekran okuyucuya okunan ama görsel olarak gizli metin. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Hareket ----------
+   [data-enter]: sayfa yüklenince oynayan giriş animasyonu (yalnız CSS).
+   [data-reveal]: ekrana girince bir kez, sabit sürede açılır. Bunu
+   MotionObserver, Web Animations API ile yapar; DOM özniteliklerine
+   dokunmadığı için hidrasyonu etkilemez. JS yoksa içerik hep görünür.
+   Sıralı gecikme için öğeye style={{ "--i": n }} verilir. */
+[data-enter] {
+  animation: enter-rise var(--dur-reveal) var(--ease-out) both;
+  animation-delay: calc(var(--i, 0) * 110ms + 80ms);
+}
+
+[data-enter="fade"] {
+  animation-name: enter-fade;
+}
+
+/* Hero görseli genelde LCP öğesidir: gizlenmez (opaklık/kırpma yok), yalnız
+   hafifçe yakınlaşıp netleşir; böylece LCP animasyonu beklemez. */
+[data-enter="mask"] {
+  animation: enter-zoom 1600ms var(--ease-out) both;
+}
+
+@keyframes enter-rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 28px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes enter-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes enter-zoom {
+  from {
+    transform: scale(1.06);
+    filter: saturate(0.7);
+  }
+  to {
+    transform: none;
+    filter: none;
+  }
+}
+
+/* Sayfa geçişi: (site)/layout.tsx içindeki <ViewTransition default="page">.
+   Eski sayfa hafifçe kaybolur, yenisi aşağıdan yükselerek gelir. */
+::view-transition-old(.page) {
+  animation: page-out 200ms var(--ease-in-out) both;
+}
+
+::view-transition-new(.page) {
+  animation: page-in 560ms var(--ease-out) 60ms both;
+}
+
+@keyframes page-out {
+  to {
+    opacity: 0;
+    transform: translate3d(0, -8px, 0);
+  }
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after,
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation: none !important;
+  }
+}

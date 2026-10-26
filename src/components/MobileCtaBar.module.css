@@ -1,0 +1,61 @@
+.bar {
+  display: none;
+}
+
+/* composes @media içinde kullanılamaz; düğme stilleri burada tanımlanır. */
+.iconButton {
+  display: inline-grid;
+  flex: none;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-pill);
+  color: var(--color-primary);
+  background: var(--color-surface);
+  transition: background-color var(--dur-base) var(--ease-out);
+}
+
+.iconButton svg {
+  width: 20px;
+  height: 20px;
+}
+
+.iconButton:active {
+  background: var(--color-primary-subtle-bg);
+}
+
+.cta {
+  composes: button primary from "../styles/button.module.css";
+  flex: 1;
+  box-shadow: var(--shadow-button);
+}
+
+@media (max-width: 1024px) {
+  /* Çubuğun yüksekliği; alt bilgi ve çerez bandı bunun üstünde kalır. */
+  :global(body) {
+    --mobile-bar-h: calc(72px + env(safe-area-inset-bottom, 0px));
+    padding-bottom: var(--mobile-bar-h);
+  }
+
+  .bar {
+    position: fixed;
+    inset: auto 0 0;
+    z-index: 40;
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    min-height: var(--mobile-bar-h);
+    padding: 0.75rem var(--gutter) calc(0.75rem + env(safe-area-inset-bottom, 0px));
+    border-top: 1px solid var(--color-line);
+    background: rgb(var(--color-bg-rgb) / 88%);
+    backdrop-filter: saturate(1.4) blur(14px);
+    animation: bar-in 700ms var(--ease-out) 600ms both;
+  }
+}
+
+@keyframes bar-in {
+  from {
+    transform: translateY(100%);
+  }
+}

@@ -1,0 +1,104 @@
+/* Ozon Tedavisi Nedir: 12 kolonlu düzen. Sol: yapışkan başlık; sağ: lead
+   metin, kontrol listesi ve "Bilimsel yaklaşım" paneli. */
+.section {
+  composes: section from "../../styles/layout.module.css";
+}
+
+.container {
+  composes: container from "../../styles/layout.module.css";
+}
+
+.grid {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.sticky {
+  align-self: start;
+}
+
+.body {
+  display: grid;
+  gap: 1.5rem;
+  min-width: 0;
+}
+
+.lead {
+  font-size: var(--step-1);
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+.paragraph {
+  max-width: 68ch;
+  font-size: var(--step-0);
+  line-height: 1.7;
+  color: var(--color-text-light);
+}
+
+.checklist {
+  list-style: none;
+  border-top: 1px solid var(--color-line);
+}
+
+.checkItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding-block: 1.25rem;
+  border-bottom: 1px solid var(--color-line);
+  font-family: var(--font-body), sans-serif;
+  font-size: var(--step-1);
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--color-heading);
+}
+
+.checkIcon {
+  flex: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-top: 0.1rem;
+  color: var(--color-accent-ink);
+}
+
+.note {
+  padding: clamp(1.75rem, 3.5vw, 2.5rem);
+  border-radius: var(--radius-lg);
+  background: var(--color-accent-soft);
+}
+
+.noteTitle {
+  margin-bottom: 1rem;
+  font-size: var(--step-2);
+  font-style: italic;
+  line-height: 1.2;
+  color: var(--color-heading);
+}
+
+.noteText {
+  font-size: var(--step-0);
+  line-height: 1.7;
+  color: var(--color-text);
+}
+
+.noteText + .noteText {
+  margin-top: 0.9rem;
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 2rem;
+  }
+
+  .sticky {
+    grid-column: 1 / span 4;
+    position: sticky;
+    top: calc(var(--header-h) + 2rem);
+  }
+
+  .body {
+    grid-column: 6 / span 7;
+  }
+}

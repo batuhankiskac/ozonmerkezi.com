@@ -1,0 +1,52 @@
+/* Sakin yükleme durumu: ince bir çizgide yavaşça kayan ışık. */
+.state {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1.25rem;
+  min-height: 40vh;
+  padding-block: 4rem;
+  color: var(--color-text-light);
+}
+
+.bar {
+  position: relative;
+  display: block;
+  width: min(16rem, 100%);
+  height: 1px;
+  overflow: hidden;
+  background: var(--color-line);
+}
+
+.bar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-primary),
+    transparent
+  );
+  transform: translateX(-100%);
+  animation: sweep 2.4s var(--ease-in-out) infinite;
+}
+
+.state p {
+  font-size: var(--step--1);
+}
+
+@keyframes sweep {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bar::after {
+    animation: none;
+    transform: none;
+    opacity: 0.5;
+  }
+}

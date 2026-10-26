@@ -1,0 +1,215 @@
+/* Koyu kapanış bölümü; zemin ve renk eşlemeleri layout.module.css içindeki .dark'tan gelir. */
+.footer {
+  composes: dark from "../styles/layout.module.css";
+  padding-top: clamp(4.5rem, 9vw, 7rem);
+  font-size: 0.95rem;
+}
+
+.container {
+  composes: container from "../styles/layout.module.css";
+}
+
+.eyebrow {
+  composes: eyebrow from "../styles/layout.module.css";
+}
+
+/* Üst kapanış: büyük görünen satır ve iletişim eylemleri. */
+.cta {
+  display: grid;
+  gap: 2.5rem;
+  align-items: end;
+}
+
+.ctaTitle {
+  margin-top: 1.25rem;
+  max-width: 18ch;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: var(--step-4);
+  font-weight: var(--heading-weight, 400);
+  line-height: 1.04;
+  letter-spacing: var(--display-tracking, -0.03em);
+  color: var(--color-on-dark);
+}
+
+.ctaActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
+}
+
+/* ContactActions bileşeni ayrı sınıflar kullanır; koyu zemine burada uyarlanır. */
+.contacts a:not([aria-label]) {
+  color: var(--color-on-dark);
+  font-family: var(--font-display), Georgia, serif;
+  font-size: var(--step-2);
+  font-weight: var(--heading-weight, 400);
+  line-height: 1.2;
+}
+
+.contacts a[aria-label="Telefonla ara"] {
+  background: rgb(255 255 255 / 10%);
+  color: var(--color-on-dark);
+}
+
+.ctaButton {
+  composes: button light from "../styles/button.module.css";
+  min-height: 48px;
+  --btn-py: 0.75rem;
+  --btn-px: 1.4rem;
+}
+
+/* Sütunlar: her biri ince üst çizgiyle ayrılır. */
+.grid {
+  display: grid;
+  gap: 2.5rem 2rem;
+  margin-top: clamp(3.5rem, 7vw, 5rem);
+}
+
+.column {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-line);
+}
+
+.brandName {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: var(--step-1);
+  line-height: 1.25;
+  color: var(--color-on-dark);
+}
+
+.brandText {
+  max-width: 34ch;
+  margin-top: 0.875rem;
+  color: var(--color-text-light);
+  line-height: 1.7;
+}
+
+/* Sütun başlıkları küçük büyük harf etiketidir; semantik için h2 olarak kalır. */
+.title {
+  margin-bottom: 1.25rem;
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-on-dark-muted);
+}
+
+.list {
+  display: grid;
+  gap: 0.75rem;
+  list-style: none;
+}
+
+/* Bağlantılarda alt çizgi soldan sağa dolar. */
+.list a,
+.list button {
+  padding: 0;
+  border: 0;
+  background: linear-gradient(currentColor, currentColor) no-repeat 0 100% / 0% 1px;
+  color: var(--color-on-dark);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background-size var(--dur-base) var(--ease-out);
+}
+
+.list a:hover,
+.list button:hover {
+  background-size: 100% 1px;
+}
+
+.address {
+  font-style: normal;
+  color: var(--color-on-dark);
+  line-height: 1.6;
+}
+
+.hours {
+  margin-top: 0.75rem;
+  color: var(--color-text-light);
+}
+
+/* Alt satır: telif solda, yukarı dön sağda. */
+.bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem 2rem;
+  margin-top: clamp(3rem, 6vw, 4rem);
+  padding-block: 1.5rem;
+  border-top: 1px solid var(--color-line);
+  font-size: var(--step--1);
+  color: var(--color-text-light);
+}
+
+.copyright {
+  margin: 0;
+}
+
+.toTop {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 44px;
+  color: var(--color-on-dark);
+  background: linear-gradient(currentColor, currentColor) no-repeat 0 100% / 0% 1px;
+  transition: background-size var(--dur-base) var(--ease-out);
+}
+
+.toTop:hover {
+  background-size: 100% 1px;
+}
+
+/* ArrowIcon sağa-yukarı çizer; sarmalayıcı 45° daha döndürerek yukarı bakar. */
+.toTopIcon {
+  display: inline-flex;
+  transform: rotate(-45deg);
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+.toTop:hover .toTopIcon {
+  transform: translateY(-3px) rotate(-45deg);
+}
+
+/* Dekoratif dev marka yazısı; kenarda kırpılır. */
+.wordmark {
+  composes: container from "../styles/layout.module.css";
+  overflow: hidden;
+  margin-top: 1.5rem;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(2.5rem, 7vw, 6.5rem);
+  font-weight: var(--heading-weight, 400);
+  line-height: 0.82;
+  letter-spacing: var(--display-tracking, -0.03em);
+  white-space: nowrap;
+  color: rgb(255 255 255 / 6%);
+  user-select: none;
+  pointer-events: none;
+}
+
+.footer :focus-visible {
+  outline-color: var(--color-accent-on-dark);
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 900px) {
+  .cta {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+}
+
+@media (min-width: 1100px) {
+  .grid {
+    grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+    gap: 2rem 3rem;
+  }
+}

@@ -1,0 +1,7 @@
+/* İçerik ızgarası: kartlar sütunlara akar; dar ekranda tek sütun. */
+.grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+  gap: 3rem 2rem;
+}

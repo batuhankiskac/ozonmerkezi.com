@@ -1,0 +1,159 @@
+/* Açık zeminli bölünmüş hero: solda metin, sağda çerçeveli portre (beyaz
+   fonlu). Header sticky olduğu için üst boşluk header yüksekliği içermez. */
+.hero {
+  position: relative;
+  padding-block: clamp(2.5rem, 6vw, 5rem) clamp(4rem, 7vw, 6.5rem);
+  background: var(--color-bg);
+}
+
+.grid {
+  composes: container from "../../styles/layout.module.css";
+  display: grid;
+  gap: clamp(3rem, 6vw, 4rem);
+  align-items: center;
+}
+
+.copy {
+  min-width: 0;
+}
+
+.eyebrow {
+  composes: eyebrow from "../../styles/layout.module.css";
+}
+
+.title {
+  composes: display from "../../styles/layout.module.css";
+  max-width: 15ch;
+  margin-top: 1.75rem;
+  color: var(--color-heading);
+}
+
+.title em {
+  font-style: italic;
+  color: var(--color-primary);
+}
+
+.subtitle {
+  max-width: 34rem;
+  margin-top: 1.75rem;
+  color: var(--color-text-light);
+  font-size: var(--step-1);
+  line-height: 1.6;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2.5rem;
+}
+
+.primary {
+  composes: button primary from "../../styles/button.module.css";
+  --btn-py: 1rem;
+  --btn-px: 1.75rem;
+}
+
+.secondary {
+  composes: button ghost from "../../styles/button.module.css";
+  --btn-py: 1rem;
+  --btn-px: 1.75rem;
+}
+
+/* Görsel genişliği 448px ile sınırlı; 4/5 oranda yükseklik en çok 560px olur. */
+.media {
+  position: relative;
+  width: min(100%, 448px);
+  min-width: 0;
+  justify-self: center;
+}
+
+.frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  max-height: 560px;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-md);
+}
+
+/* Portre beyaz zeminli; üst hizalı kırpma başı korur. */
+.image {
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Yüzen kart: görselin sol altına taşar. */
+.chip {
+  position: absolute;
+  left: 0.75rem;
+  bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: calc(100% - 1.5rem);
+  padding: 0.9rem 1.25rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-md);
+}
+
+.dot {
+  flex: none;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 50%;
+  background: var(--color-accent);
+  animation: pulse 2.4s var(--ease-in-out) infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-accent) 85%, transparent);
+  }
+  60% {
+    box-shadow: 0 0 0 0.6rem color-mix(in srgb, var(--color-accent) 0%, transparent);
+  }
+}
+
+.chipName {
+  display: block;
+  color: var(--color-heading);
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1rem;
+  font-weight: var(--heading-weight);
+  line-height: 1.3;
+}
+
+.chipRole {
+  display: block;
+  margin-top: 0.15rem;
+  color: var(--color-text-light);
+  font-size: var(--step--1);
+  line-height: 1.4;
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 2rem;
+  }
+
+  .copy {
+    grid-column: 1 / span 7;
+  }
+
+  .media {
+    grid-column: 8 / span 5;
+    justify-self: end;
+  }
+
+  .chip {
+    left: -2rem;
+    bottom: 2.5rem;
+  }
+}

@@ -1,0 +1,289 @@
+/* Üst çubuk: sticky, yarı saydam zemin. Kaydırınca incelir ve alt çizgi belirir (data-scrolled). */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: var(--header-h);
+  border-bottom: 1px solid transparent;
+  background-color: rgb(var(--color-bg-rgb) / 78%);
+  backdrop-filter: saturate(1.4) blur(14px);
+  transition:
+    height var(--dur-base) var(--ease-out),
+    border-color var(--dur-base) var(--ease-out);
+}
+
+.header[data-scrolled] {
+  height: 64px;
+  border-bottom-color: var(--color-line);
+}
+
+/* Sayfa genişliğindeki iç satır. */
+.inner {
+  composes: container from "../styles/layout.module.css";
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* Hekim adı display yazı tipinde; altındaki site adı küçük büyük harf etiketi. */
+.logo {
+  position: relative;
+  z-index: 120; /* açık mobil menünün üstünde kalır */
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  line-height: 1.15;
+}
+
+.doctorName {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--color-primary);
+}
+
+.siteName {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Masaüstü bağlantısı: alt çizgi soldan sağa dolar; etkin sayfada kalır. */
+.navLink {
+  position: relative;
+  padding-block: 0.4rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text-light);
+  transition: color var(--dur-base) var(--ease-out);
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+.navLink:hover {
+  color: var(--color-text);
+}
+
+.navLink:hover::after,
+.navLink[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+.navLink[aria-current="page"] {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+/* Mobilde sıra numarası; masaüstünde gizli. */
+.navIndex {
+  display: none;
+}
+
+/* Header CTA'sı: birincil düğme, ok ikonu ile. */
+.ctaButton {
+  composes: button primary from "../styles/button.module.css";
+  --btn-py: 0.5rem;
+  --btn-px: 1.25rem;
+  min-height: 42px;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.ctaButton[aria-current="page"] {
+  --btn-border-color: var(--color-primary-dark);
+  background-color: var(--color-primary-dark);
+}
+
+/* Hamburger: iki çizgi; açılınca X'e döner. Yalnız mobilde görünür. */
+.hamburger {
+  display: none;
+  position: relative;
+  z-index: 120;
+  width: 44px;
+  height: 44px;
+  margin-right: -0.5rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.hamburger span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 22px;
+  height: 1.5px;
+  margin: -0.75px 0 0 -11px;
+  border-radius: 2px;
+  background: currentColor;
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+.hamburger span:first-child {
+  transform: translateY(-5px);
+}
+
+.hamburger span:last-child {
+  transform: translateY(5px);
+}
+
+.hamburger.open span:first-child {
+  transform: rotate(45deg);
+}
+
+.hamburger.open span:last-child {
+  transform: rotate(-45deg);
+}
+
+/* Mobil menü kırılımı; Header.tsx içindeki DESKTOP_MEDIA_QUERY (1025px) ile eşleşmeli. */
+@media (max-width: 1024px) {
+  .header {
+    backdrop-filter: none;
+    background-color: var(--color-bg);
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  /* Tam ekran örtü: üst çubuğun altında, sayfa zemini rengiyle. */
+  .nav {
+    position: fixed;
+    inset: 0;
+    z-index: 110;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    height: 100vh;
+    height: 100dvh;
+    padding: calc(var(--header-h) + 1.5rem) var(--gutter) 2rem;
+    background-color: var(--color-bg);
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      opacity var(--dur-base) var(--ease-out),
+      visibility var(--dur-base) var(--ease-out);
+  }
+
+  .nav.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  /* Büyük ekran yazısı; her satırda ince ayırıcı. Açılışta kademeli gelir. */
+  .navLink {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 1.1rem 0 1rem;
+    border-bottom: 1px solid var(--color-line);
+    font-family: var(--font-display), Georgia, serif;
+    font-size: var(--step-3);
+    font-weight: var(--heading-weight, 400);
+    line-height: 1.1;
+    color: var(--color-heading);
+    opacity: 0;
+    translate: 0 12px;
+    transition:
+      opacity var(--dur-base) var(--ease-out),
+      translate var(--dur-base) var(--ease-out),
+      color var(--dur-base) var(--ease-out);
+    transition-delay: calc(var(--i) * 50ms);
+  }
+
+  .navLink:first-child {
+    border-top: 1px solid var(--color-line);
+  }
+
+  .navLink::after {
+    display: none;
+  }
+
+  .navLink[aria-current="page"] {
+    font-weight: var(--heading-weight, 400);
+    color: var(--color-primary);
+  }
+
+  .nav.open .navLink {
+    opacity: 1;
+    translate: 0 0;
+  }
+
+  .nav:not(.open) .navLink {
+    transition-delay: 0ms;
+  }
+
+  .navIndex {
+    display: block;
+    flex: none;
+    min-width: 1.5rem;
+    font-family: var(--font-body), sans-serif;
+    font-size: var(--step--1);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    color: var(--color-accent-ink);
+  }
+
+  /* Alt kısımda tam genişlikte CTA. */
+  .ctaButton {
+    width: 100%;
+    min-height: 56px;
+    margin-top: auto;
+    --btn-py: 0.9rem;
+    font-size: 1rem;
+    opacity: 0;
+    translate: 0 12px;
+    transition:
+      transform var(--dur-fast) var(--ease-out),
+      background-color var(--dur-base) var(--ease-out),
+      border-color var(--dur-base) var(--ease-out),
+      color var(--dur-base) var(--ease-out),
+      box-shadow var(--dur-base) var(--ease-out),
+      opacity var(--dur-base) var(--ease-out),
+      translate var(--dur-base) var(--ease-out);
+    transition-delay: calc(var(--i) * 50ms);
+  }
+
+  .nav.open .ctaButton {
+    opacity: 1;
+    translate: 0 0;
+  }
+
+  .nav:not(.open) .ctaButton {
+    transition-delay: 0ms;
+  }
+}
+
+@media (max-width: 480px) {
+  .inner {
+    gap: 1rem;
+  }
+}

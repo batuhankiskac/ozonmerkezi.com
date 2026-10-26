@@ -1,0 +1,105 @@
+/* İletişim: sol sütunda etiketli bilgi satırları, sağda harita çerçevesi (5/7). */
+.page {
+  composes: page from "../../../styles/page.module.css";
+}
+
+.header {
+  composes: header from "../../../styles/page.module.css";
+}
+
+.eyebrow {
+  composes: eyebrow from "../../../styles/page.module.css";
+}
+
+.title {
+  composes: title from "../../../styles/page.module.css";
+}
+
+.lead {
+  composes: lead from "../../../styles/page.module.css";
+}
+
+.body {
+  composes: body from "../../../styles/page.module.css";
+}
+
+.layout {
+  display: grid;
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+@media (min-width: 900px) {
+  .layout {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    align-items: start;
+  }
+}
+
+.info {
+  min-width: 0;
+}
+
+.row {
+  display: grid;
+  justify-items: start;
+  gap: 0.9rem;
+  padding-block: 1.75rem;
+  border-top: 1px solid var(--color-line);
+}
+
+.info > .row:last-child {
+  border-bottom: 1px solid var(--color-line);
+}
+
+.label {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+}
+
+/* Büyük görünen telefon numarası: display yazı tipi, tabular rakamlar. */
+.phone {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: var(--step-3);
+  line-height: 1.05;
+  white-space: nowrap;
+  letter-spacing: var(--display-tracking, -0.03em);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-heading);
+  transition: color var(--dur-base) var(--ease-out);
+}
+
+.phone:hover {
+  color: var(--color-primary);
+}
+
+.actions {
+  margin-top: 0.35rem;
+}
+
+.value {
+  font-size: var(--step-1);
+  line-height: 1.5;
+  font-style: normal;
+  color: var(--color-text);
+}
+
+.link {
+  composes: link from "../../../styles/button.module.css";
+  font-size: 0.95rem;
+}
+
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.75rem;
+}
+
+.mapWrap {
+  height: clamp(360px, 42vw, 560px);
+  border-radius: var(--radius-lg);
+}

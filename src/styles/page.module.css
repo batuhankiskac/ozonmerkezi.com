@@ -1,0 +1,49 @@
+/* İç sayfaların ortak iskeleti: üst başlık bloğu ve gövde.
+   Kullanım: <main className={pageStyles.page}>
+     <header className={pageStyles.header}> eyebrow + h1.title + p.lead </header>
+     <div className={pageStyles.body}> ... </div> */
+.page {
+  width: min(100% - 2 * var(--gutter), var(--page-max, var(--container)));
+  margin-inline: auto;
+  padding-block: clamp(3rem, 7vw, 6rem) var(--section-y);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding-bottom: clamp(2rem, 4vw, 3.5rem);
+  margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.eyebrow {
+  composes: eyebrow from "./layout.module.css";
+}
+
+.title {
+  max-width: 18ch;
+  font-size: var(--step-5);
+  line-height: 1;
+  letter-spacing: var(--display-tracking, -0.03em);
+}
+
+.lead {
+  composes: lead from "./layout.module.css";
+}
+
+.body {
+  min-width: 0;
+}
+
+/* Eski adlar: henüz yeni iskelete geçmemiş sayfalar için. */
+.container {
+  composes: page;
+}
+
+.heading {
+  margin-bottom: var(--heading-mb, 2.5rem);
+  font-size: var(--heading-size, var(--step-4));
+  text-align: var(--heading-align, left);
+  letter-spacing: var(--display-tracking, -0.03em);
+}

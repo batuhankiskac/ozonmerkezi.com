@@ -1,0 +1,43 @@
+/* Yazılar listesi: iskelet src/styles/page.module.css'ten; yalnız genişlik ve masaüstü başlık düzeni burada. */
+.page {
+  composes: page from "../../../styles/page.module.css";
+  --page-max: 1000px;
+}
+
+.header {
+  composes: header from "../../../styles/page.module.css";
+}
+
+.eyebrow {
+  composes: eyebrow from "../../../styles/page.module.css";
+}
+
+.title {
+  composes: title from "../../../styles/page.module.css";
+}
+
+.lead {
+  composes: lead from "../../../styles/page.module.css";
+}
+
+.body {
+  composes: body from "../../../styles/page.module.css";
+}
+
+/* Masaüstünde başlık solda, açıklama sağda, alta hizalı. */
+@media (min-width: 900px) {
+  .page .header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 26rem);
+    align-items: end;
+    column-gap: 4rem;
+  }
+
+  .page .eyebrow {
+    grid-column: 1 / -1;
+  }
+
+  .page .lead {
+    margin: 0;
+  }
+}

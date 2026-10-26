@@ -1,0 +1,37 @@
+/* Sol hizalı, dikey ortalanmış editoryal blok; genişlik sayfa kapsayıcısından gelir. */
+.container {
+  composes: container from "../styles/layout.module.css";
+  min-height: 65vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-block: clamp(5rem, 14vw, 9rem);
+}
+
+.eyebrow {
+  composes: eyebrow from "../styles/layout.module.css";
+}
+
+.title {
+  margin-top: 1.5rem;
+  max-width: 18ch;
+  font-size: var(--step-4);
+  line-height: 1.04;
+  letter-spacing: var(--display-tracking, -0.03em);
+}
+
+.message {
+  max-width: 36ch;
+  margin-top: 1.5rem;
+  font-size: var(--step-1);
+  line-height: 1.6;
+  color: var(--color-text-light);
+}
+
+.action {
+  composes: button primary from "../styles/button.module.css";
+  margin-top: 2.5rem;
+  --btn-py: 0.85rem;
+  --btn-px: 1.5rem;
+}

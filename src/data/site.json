@@ -1,0 +1,332 @@
+{
+  "brand": {
+    "siteName": "Ozon Merkezi",
+    "domain": "ozonmerkezi.com",
+    "shortDescription": "Prof. Dr. Muharrem Kıskaç değerlendirmesiyle, sertifikalı ekipman ve kişiye özel protokolle uygulanan destekleyici medikal ozon tedavisi.",
+    "doctorName": "Prof. Dr. Muharrem Kıskaç",
+    "doctorTitle": "İç Hastalıkları Uzmanı"
+  },
+  "contact": {
+    "address": "Zuhuratbaba, Haksever Sk. Paşa İş Merkezi No:2 Daire:14, 34147 Bakırköy/İstanbul",
+    "addressParts": {
+      "streetAddress": "Zuhuratbaba, Haksever Sk. Paşa İş Merkezi No:2 Daire:14",
+      "addressLocality": "Bakırköy",
+      "addressRegion": "İstanbul",
+      "postalCode": "34147",
+      "addressCountry": "TR"
+    },
+    "phone": "0 532 219 33 64",
+    "tel": "+905322193364",
+    "whatsapp": "905322193364",
+    "email": null,
+    "social": {
+      "instagram": "https://www.instagram.com/profdrmuharremkiskac/",
+      "youtube": "https://www.youtube.com/@profdrmuharremkiskac"
+    },
+    "mapEmbedUrl": "https://maps.google.com/maps?q=Zuhuratbaba,+Haksever+Sk.+Paşa+iş+merkezi+No:2+Daire:14,+34147+Bakırköy/İstanbul&t=&z=15&ie=UTF8&iwloc=&output=embed",
+    "mapsLink": "https://www.google.com/maps/search/?api=1&query=Zuhuratbaba%2C+Haksever+Sk.+Pa%C5%9Fa+%C4%B0%C5%9F+Merkezi+No%3A2+Daire%3A14%2C+34147+Bak%C4%B1rk%C3%B6y%2F%C4%B0stanbul",
+    "workingHours": "Pazartesi - Cumartesi: 09:00 - 18:00"
+  },
+  "seo": {
+    "home": {
+      "title": "Ozon Merkezi | Prof. Dr. Muharrem Kıskaç",
+      "description": "Prof. Dr. Muharrem Kıskaç değerlendirmesiyle, sertifikalı ekipman ve kişiye özel protokolle uygulanan destekleyici medikal ozon tedavisi. Bakırköy, İstanbul."
+    },
+    "articlesIndex": {
+      "title": "Ozon Tedavisi Makaleleri",
+      "description": "Medikal ozon tedavisi, uygulama yöntemleri ve bilimsel literatür üzerine bilgilendirici yazılar. Bilgilendirme amaçlıdır; hekim değerlendirmesinin yerini tutmaz."
+    },
+    "about": {
+      "title": "Ozon Tedavisi Nedir?",
+      "description": "Medikal ozon (oksijen-ozon karışımı) tedavisi hakkında genel bilgi: uygulama yöntemleri, kullanım alanları ve dikkat edilmesi gerekenler."
+    },
+    "contact": {
+      "title": "İletişim & Randevu",
+      "description": "Ozon Merkezi adres, telefon ve çalışma saatleri. Detaylı bilgi ve randevu için bize ulaşın."
+    }
+  },
+  "navigation": [
+    {
+      "href": "/#nedir",
+      "label": "Ozon Tedavisi"
+    },
+    {
+      "href": "/#yontemler",
+      "label": "Yöntemler"
+    },
+    {
+      "href": "/makaleler",
+      "label": "Makaleler"
+    },
+    {
+      "href": "/iletisim",
+      "label": "İletişim"
+    }
+  ],
+  "home": {
+    "sections": [
+      {
+        "id": "hero",
+        "kind": "hero",
+        "eyebrow": "Medikal Ozon Tedavisi",
+        "title": "Uzman Hekim Kontrolünde Medikal Ozon Tedavisi",
+        "titleEmphasis": "Medikal Ozon",
+        "subtitle": "Prof. Dr. Muharrem Kıskaç değerlendirmesiyle, sertifikalı ekipman ve kişiye özel protokolle uygulanan destekleyici bir tedavi yaklaşımı.",
+        "ctas": [
+          {
+            "label": "Randevu Al",
+            "href": "/iletisim"
+          },
+          {
+            "label": "Tedaviyi Tanıyın",
+            "href": "/#nedir"
+          }
+        ]
+      },
+      {
+        "id": "nedir",
+        "kind": "text",
+        "title": "Ozon Tedavisi Nedir?",
+        "paragraphs": [
+          "Medikal ozon tedavisi, tıbbi saflıktaki oksijenden sertifikalı bir jeneratörle üretilen, belirli oranda ozon (O₃) içeren oksijen-ozon karışımının vücuda kontrollü dozlarda verilmesidir.",
+          "Uygulama yöntemi, doz ve seans sayısı hekim değerlendirmesi sonrası kişiye göre belirlenir. Ozon tedavisi bir hastalığın tek başına tedavisi değil, mevcut tıbbi tedaviyi destekleyici bir yaklaşım olarak değerlendirilir."
+        ],
+        "items": [
+          {
+            "title": "Sertifikalı medikal ozon jeneratörü",
+            "text": ""
+          },
+          {
+            "title": "Steril, tek kullanımlık malzemeler",
+            "text": ""
+          },
+          {
+            "title": "Uzman hekim tarafından uygulama ve takip",
+            "text": ""
+          }
+        ]
+      },
+      {
+        "id": "bilimsel-yaklasim",
+        "kind": "text",
+        "title": "Bilimsel yaklaşım",
+        "paragraphs": [
+          "Ozon tedavisinin etkileri üzerine bilimsel literatürde çalışmalar sürmektedir ve kanıt düzeyi kullanım alanına göre farklılık gösterir. Bu nedenle her başvuru, hekim değerlendirmesi ve gerekli tahlillerle başlar."
+        ]
+      },
+      {
+        "id": "yontemler",
+        "kind": "cards",
+        "title": "Uygulama Yöntemleri",
+        "subtitle": "Hangi yöntemin uygun olduğuna muayene ve tahliller sonrasında hekim karar verir.",
+        "items": [
+          {
+            "title": "Majör Otohemoterapi",
+            "text": "Damardan alınan kan, steril bir sistemde oksijen-ozon karışımıyla buluşturulup yeniden damar yoluyla verilir."
+          },
+          {
+            "title": "Minör Otohemoterapi",
+            "text": "Az miktarda kan ozonla karıştırılarak kas içine uygulanır."
+          },
+          {
+            "title": "Rektal İnsüflasyon",
+            "text": "Belirlenen dozdaki karışım, ince bir kateterle rektal yoldan verilir."
+          },
+          {
+            "title": "Eklem İçi ve Lokal Enjeksiyon",
+            "text": "Eklem içine ya da ağrılı kas ve yumuşak doku bölgelerine düşük doz enjeksiyon yapılır."
+          },
+          {
+            "title": "Ozon Torbası",
+            "text": "Kol, bacak veya ayak, ozon gazı içeren özel bir torba içinde belirli süre tutulur."
+          },
+          {
+            "title": "Ozonlu Yağ",
+            "text": "Ozonlanmış bitkisel yağlar, cilt ve yara bakımında topikal olarak kullanılır."
+          }
+        ]
+      },
+      {
+        "id": "kullanim-alanlari",
+        "kind": "list",
+        "title": "Kullanım Alanları",
+        "paragraphs": [
+          "Aşağıdaki durumlarda ozon tedavisi, mevcut tıbbi tedaviye ek olarak destekleyici şekilde değerlendirilebilir. Uygunluk her hasta için ayrıca belirlenir."
+        ],
+        "items": [
+          {
+            "title": "Kronik yorgunluk",
+            "text": "Süregelen halsizlik ve yorgunluk şikâyetlerinde destekleyici olarak."
+          },
+          {
+            "title": "Dolaşım bozuklukları",
+            "text": "Periferik dolaşım sorunlarında tedaviye ek olarak."
+          },
+          {
+            "title": "Diyabetik ayak yaraları",
+            "text": "Yara bakımının yanında lokal uygulamalarla."
+          },
+          {
+            "title": "Eklem ve kas ağrıları",
+            "text": "Diz, bel ve boyun gibi bölgelerde lokal enjeksiyonla."
+          },
+          {
+            "title": "Bağışıklık desteği",
+            "text": "Sık tekrarlayan enfeksiyon yakınmalarında hekim değerlendirmesiyle."
+          },
+          {
+            "title": "Cilt sorunları",
+            "text": "Bazı cilt sorunlarında ozonlu yağ ve topikal uygulamalarla."
+          }
+        ]
+      },
+      {
+        "id": "surec",
+        "kind": "steps",
+        "title": "Tedavi Süreci",
+        "items": [
+          {
+            "title": "Muayene ve değerlendirme",
+            "text": "Şikâyetleriniz, öykünüz ve kullandığınız ilaçlar hekim tarafından değerlendirilir."
+          },
+          {
+            "title": "Tahliller",
+            "text": "Gerekli görülen kan tahlilleri (ör. G6PD, hemogram) ile tedaviye uygunluk kontrol edilir."
+          },
+          {
+            "title": "Kişiye özel protokol",
+            "text": "Uygulama yöntemi, doz ve seans sayısı size göre planlanır."
+          },
+          {
+            "title": "Seanslar ve takip",
+            "text": "Seanslar hekim gözetiminde yapılır; yanıtınıza göre protokol düzenlenir."
+          }
+        ]
+      },
+      {
+        "id": "dikkat",
+        "kind": "list",
+        "title": "Kimler İçin Uygun Değil?",
+        "paragraphs": [
+          "Aşağıdaki durumlarda ozon tedavisi uygulanmaz ya da ancak hekim değerlendirmesiyle düşünülebilir:"
+        ],
+        "items": [
+          {
+            "title": "G6PD enzim eksikliği",
+            "text": "Kırmızı kan hücrelerinde yıkım riski nedeniyle uygulanmaz."
+          },
+          {
+            "title": "Gebelik",
+            "text": "Gebelik döneminde uygulanması önerilmez."
+          },
+          {
+            "title": "Kontrolsüz hipertiroidi",
+            "text": "Tiroit fonksiyonları dengelenmeden uygulanmaz."
+          },
+          {
+            "title": "Aktif kanama ve bazı pıhtılaşma bozuklukları",
+            "text": "Kan sulandırıcı kullanımında hekime bilgi verilmelidir."
+          },
+          {
+            "title": "Ağır anemi",
+            "text": "Ciddi kansızlıkta uygun olmayabilir."
+          },
+          {
+            "title": "Ozona karşı aşırı duyarlılık",
+            "text": "Daha önce ozona bağlı reaksiyon yaşayanlarda uygulanmaz."
+          },
+          {
+            "title": "Yakın zamanda geçirilmiş kalp krizi",
+            "text": "Akut kardiyak durumlarda uygulanmaz."
+          },
+          {
+            "title": "Akut alkol zehirlenmesi",
+            "text": "Bu durumda uygulama yapılmaz."
+          }
+        ],
+        "note": "Uygulamalar sertifikalı medikal ozon jeneratörü, steril tek kullanımlık malzeme ile ve uzman hekim tarafından yapılır. Ozon gazı solunmaz; tedavi öncesinde hekim değerlendirmesi gerekir."
+      },
+      {
+        "id": "iletisim",
+        "kind": "contact",
+        "title": "İletişim & Randevu",
+        "subtitle": "Ozon tedavisinin size uygun olup olmadığını öğrenmek için muayene randevusu alın.",
+        "items": [
+          {
+            "title": "Telefon / WhatsApp",
+            "text": "0 532 219 33 64",
+            "href": "tel:+905322193364"
+          },
+          {
+            "title": "Adres",
+            "text": "Zuhuratbaba, Haksever Sk. Paşa İş Merkezi No:2 Daire:14, 34147 Bakırköy/İstanbul"
+          },
+          {
+            "title": "Çalışma Saatleri",
+            "text": "Pazartesi - Cumartesi: 09:00 - 18:00"
+          }
+        ],
+        "social": [
+          {
+            "label": "Instagram",
+            "href": "https://www.instagram.com/profdrmuharremkiskac/"
+          },
+          {
+            "label": "YouTube",
+            "href": "https://www.youtube.com/@profdrmuharremkiskac"
+          }
+        ],
+        "map": "https://maps.google.com/maps?q=Zuhuratbaba,+Haksever+Sk.+Paşa+iş+merkezi+No:2+Daire:14,+34147+Bakırköy/İstanbul&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    ]
+  },
+  "footer": {
+    "text": "© 2026 Prof. Dr. Muharrem Kıskaç. Tüm Hakları Saklıdır.",
+    "copyrightOwner": "Prof. Dr. Muharrem Kıskaç",
+    "links": [
+      {
+        "label": "Ozon Tedavisi",
+        "href": "/#nedir"
+      },
+      {
+        "label": "Makaleler",
+        "href": "/makaleler"
+      },
+      {
+        "label": "Videolar",
+        "href": "/videolar"
+      },
+      {
+        "label": "İletişim",
+        "href": "/iletisim"
+      },
+      {
+        "label": "Prof. Dr. Muharrem Kıskaç",
+        "href": "https://profdrmuharremkiskac.com"
+      },
+      {
+        "label": "Doktor Hacamat",
+        "href": "https://doktorhacamat.com"
+      },
+      {
+        "label": "Sibo Klinik",
+        "href": "https://siboklinik.com"
+      },
+      {
+        "label": "Instagram",
+        "href": "https://www.instagram.com/profdrmuharremkiskac/"
+      },
+      {
+        "label": "YouTube",
+        "href": "https://www.youtube.com/@profdrmuharremkiskac"
+      }
+    ]
+  },
+  "images": [
+    {
+      "file": "doctor.jpg",
+      "usedIn": "hero",
+      "alt": "Beyaz önlüklü Prof. Dr. Muharrem Kıskaç portresi"
+    }
+  ]
+}

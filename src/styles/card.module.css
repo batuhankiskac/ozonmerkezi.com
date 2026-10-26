@@ -1,0 +1,71 @@
+/* Ortak kart: ince çerçeve, hover'da hafif yükselme ve görselde yavaş yakınlaşma. */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--color-line);
+  border-radius: var(--card-radius, var(--radius-md));
+  background: var(--color-surface);
+  box-shadow: var(--card-shadow, none);
+  transition:
+    transform var(--dur-base) var(--ease-out),
+    box-shadow var(--dur-base) var(--ease-out),
+    border-color var(--dur-base) var(--ease-out);
+}
+
+.card:hover {
+  transform: translateY(var(--card-lift, -4px));
+  border-color: var(--color-line-strong);
+  box-shadow: var(--shadow-lg);
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: var(--ratio, 1);
+  overflow: hidden;
+  background: var(--color-bg-alt);
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 1200ms var(--ease-out);
+}
+
+.card:hover .image {
+  transform: scale(1.045);
+}
+
+.title {
+  font-weight: var(--heading-weight, 500);
+  line-height: 1.25;
+  overflow-wrap: break-word;
+}
+
+.clamp {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--lines, 3);
+  line-clamp: var(--lines, 3);
+  overflow-wrap: break-word;
+}
+
+/* .card taşmayı kırptığı için odak halkası kartın kendisine çizilir. */
+@supports selector(:has(*)) {
+  .card:has(.focusTarget:focus-visible) {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 3px;
+  }
+
+  .focusTarget:focus-visible {
+    outline: none;
+  }
+}
+
+@supports not selector(:has(*)) {
+  .focusTarget:focus-visible {
+    outline-offset: -3px;
+  }
+}

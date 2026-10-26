@@ -1,0 +1,79 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Telefon: birincil buton; koyu zeminde açık çerçeveli. */
+.phone {
+  composes: button primary from "../styles/button.module.css";
+}
+
+.phoneInverted {
+  composes: button ghostLight from "../styles/button.module.css";
+}
+
+/* WhatsApp: çerçeveli ikincil buton. */
+.whatsapp {
+  composes: button ghost from "../styles/button.module.css";
+}
+
+.whatsappInverted {
+  composes: button ghostLight from "../styles/button.module.css";
+}
+
+.glyph {
+  flex: none;
+  width: 1.1em;
+  height: 1.1em;
+}
+
+/* Kompakt: metinsiz, yuvarlak ve ince çerçeveli ikon butonlar. */
+.compact {
+  gap: 0.6rem;
+}
+
+.iconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--color-line-strong);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-primary);
+  transition:
+    background-color var(--dur-base) var(--ease-out),
+    border-color var(--dur-base) var(--ease-out),
+    color var(--dur-base) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out);
+}
+
+.iconButton:hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.iconButton:active {
+  transform: scale(0.96);
+}
+
+.iconButton .glyph {
+  width: 18px;
+  height: 18px;
+}
+
+.iconButtonInverted {
+  composes: iconButton;
+  border-color: rgb(255 255 255 / 36%);
+  color: var(--color-on-dark);
+}
+
+.iconButtonInverted:hover {
+  border-color: var(--color-on-dark);
+  background: rgb(255 255 255 / 14%);
+  color: var(--color-on-dark);
+}

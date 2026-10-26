@@ -1,0 +1,97 @@
+.container {
+  width: min(900px, 100%);
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.title {
+  margin-bottom: 2rem;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.group label {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.hint {
+  color: var(--color-text-light);
+  font-size: 0.875rem;
+}
+
+.input,
+.textarea,
+.fileInput {
+  width: 100%;
+  padding: 0.85rem;
+  border: 1px solid var(--color-input-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+}
+
+.textarea {
+  min-height: 8rem;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.input:focus,
+.textarea:focus,
+.fileInput:focus {
+  border-color: var(--color-primary);
+  outline: 3px solid var(--color-primary);
+  outline-offset: 1px;
+}
+
+.preview {
+  width: min(240px, 100%);
+  height: auto;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+}
+
+.error {
+  padding: 0.75rem 1rem;
+  border-left: 4px solid var(--color-danger);
+  border-radius: var(--radius-sm);
+  background: var(--color-danger-bg);
+  color: var(--color-danger);
+  font-weight: 600;
+}
+
+.button {
+  composes: button solid from "../../styles/button.module.css";
+  min-height: 48px;
+  padding: 0.9rem 1.5rem;
+  border: 0;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+}
+
+.button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 1.25rem;
+  }
+}

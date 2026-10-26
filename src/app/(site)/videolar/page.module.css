@@ -1,0 +1,21 @@
+/* Videolar listesi: iskelet src/styles/page.module.css'ten; yalnız genişlik ve masaüstü başlık düzeni burada. */
+.page {
+  composes: page from "../../../styles/page.module.css";
+  --page-max: 1200px;
+}
+
+.header {
+  composes: header from "../../../styles/page.module.css";
+}
+
+.eyebrow {
+  composes: eyebrow from "../../../styles/page.module.css";
+}
+
+.title {
+  composes: title from "../../../styles/page.module.css";
+}
+
+.body {
+  composes: body from "../../../styles/page.module.css";
+}
