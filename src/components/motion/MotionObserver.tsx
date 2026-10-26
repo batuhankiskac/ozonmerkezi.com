@@ -29,6 +29,13 @@ function framesFor(element: HTMLElement) {
   return FRAMES[element.dataset.reveal || "rise"] ?? FRAMES.rise;
 }
 
+// Bekleme karesi. "mask" tamamen kırpılmış başlarsa IntersectionObserver onu
+// hiç kesişiyor saymaz ve öğe gizli kalır; bu yüzden beklerken yalnız saydam
+// tutulur, kırpma açılış animasyonunun ilk karesinde başlar.
+function holdFrame(element: HTMLElement): Keyframe {
+  return element.dataset.reveal === "mask" ? { opacity: 0 } : framesFor(element)[0];
+}
+
 // [data-reveal] öğelerini ekrana girdiklerinde bir kez, sabit sürede açar.
 // Web Animations API kullanılır; DOM öznitelikleri değişmediği için React
 // hidrasyonu etkilenmez. Akışla sonradan gelen öğeleri MutationObserver yakalar.
@@ -77,7 +84,7 @@ export default function MotionObserver() {
       // Ekran dışındaki öğe, görünene kadar ilk karede tutulur.
       hidden.set(
         element,
-        element.animate([framesFor(element)[0]], { duration: 0, fill: "forwards" }),
+        element.animate([holdFrame(element)], { duration: 0, fill: "forwards" }),
       );
       observer.observe(element);
     };

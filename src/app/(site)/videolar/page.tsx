@@ -8,7 +8,7 @@ import styles from "./page.module.css";
 
 export const metadata = pageMetadata({
   title: "Videolar",
-  description: "Sağlıklı yaşam rehberi videoları.",
+  description: "Medikal ozon tedavisi ve uygulama yöntemleri üzerine Prof. Dr. Muharrem Kıskaç'ın videoları.",
   path: "/videolar",
 });
 

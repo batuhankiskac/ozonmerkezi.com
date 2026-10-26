@@ -20,10 +20,9 @@ export default async function AdminLayout({
     <div className={styles.container}>
       <aside className={styles.sidebar}>
         <div className={styles.logo}>Admin Panel</div>
+        {/* Bu sitede herkese açık hizmet sayfası yok; Hizmetler bölümü menüde
+            gösterilmez (ortak admin kodu ve e2e testleri için rotası durur). */}
         <nav className={styles.nav} aria-label="Admin menüsü">
-          <Link href="/admin/hizmetler" className={styles.link}>
-            Hizmetler
-          </Link>
           <Link href="/admin/makaleler" className={styles.link}>
             Makaleler
           </Link>
