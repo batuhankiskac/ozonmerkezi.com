@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "UV_THREADPOOL_SIZE=1 NODE_OPTIONS=--v8-pool-size=1 next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",

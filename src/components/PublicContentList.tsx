@@ -4,7 +4,7 @@ import EmptyState from "@/components/EmptyState";
 
 type PublicContentListProps<T extends { id: string }> = {
   load: () => Promise<T[]>;
-  emptyText: string;
+  emptyText: ReactNode;
   // İkinci parametre ızgaradaki sıra; kartların kademeli açılması için.
   renderItem: (item: T, index: number) => ReactNode;
 };
