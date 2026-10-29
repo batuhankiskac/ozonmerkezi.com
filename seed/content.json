@@ -1,37 +1,5 @@
 {
-  "articles": [
-    {
-      "id": "ozon-tedavisi-nedir",
-      "title": "Medikal Ozon Tedavisi Nedir, Nasıl Uygulanır?",
-      "summary": "Oksijen-ozon karışımının tıbbi kullanımı, uygulama yöntemleri ve tedaviye başlamadan önce yapılan hekim değerlendirmesi hakkında genel bilgi.",
-      "content": "## Medikal Ozon\n\nMedikal ozon, tıbbi saflıktaki oksijenin sertifikalı bir ozon jeneratöründen geçirilmesiyle elde edilen oksijen-ozon (O₂/O₃) karışımıdır. Karışımdaki ozon oranı ve toplam doz, uygulama yöntemine ve kişinin durumuna göre hekim tarafından belirlenir.\n\n## Nasıl Uygulanır?\n\nEn sık kullanılan yöntemler majör ve minör otohemoterapi, rektal insüflasyon, eklem içi veya lokal enjeksiyon, ozon torbası ve ozonlu yağlarla topikal uygulamadır. Ozon gazı hiçbir zaman solunmaz; akciğerlere zararlı olabilir.\n\n## Tedaviden Önce\n\nTedavi; muayene, öykü ve gerekli tahlillerle (ör. G6PD enzim düzeyi, hemogram) başlar. Ozon tedavisi bir hastalığın tek başına tedavisi olarak değil, mevcut tıbbi tedaviyi destekleyici bir yaklaşım olarak değerlendirilmelidir. Bu yazı bilgilendirme amaçlıdır ve hekim değerlendirmesinin yerini tutmaz.",
-      "citations": [
-        "Elvis AM, Ekta JS. (2011). Ozone therapy: A clinical review. J Nat Sci Biol Med. 2(1):66-70. https://pubmed.ncbi.nlm.nih.gov/22470237/",
-        "Smith NL, et al. (2017). Ozone therapy: an overview of pharmacodynamics, current research, and clinical utility. Med Gas Res. 7(3):212-219."
-      ],
-      "imageUrl": null
-    },
-    {
-      "id": "major-otohemoterapi",
-      "title": "Majör Otohemoterapi: Uygulama Adımları",
-      "summary": "Ozon tedavisinin en bilinen yöntemlerinden majör otohemoterapinin nasıl yapıldığı ve süreçte nelere dikkat edildiği.",
-      "content": "## Yöntem\n\nMajör otohemoterapide koldaki bir damardan steril, tek kullanımlık bir sisteme belirli miktarda kan alınır. Kan, hekimin belirlediği dozdaki oksijen-ozon karışımıyla kapalı sistem içinde karıştırılır ve aynı damar yolundan yeniden verilir. Bir seans genellikle 30-45 dakika sürer.\n\n## Seans Planı\n\nSeans sayısı ve aralığı kişiye göre planlanır. Protokol, kişinin yanıtına ve takipteki bulgulara göre hekim tarafından düzenlenir.\n\n## Dikkat Edilmesi Gerekenler\n\nG6PD enzim eksikliği, gebelik, kontrolsüz hipertiroidi ve bazı pıhtılaşma bozukluklarında uygulanmaz. Kan sulandırıcı ilaç kullanıyorsanız hekiminize mutlaka bilgi verin. Uygulama yerinde hafif morarma görülebilir.",
-      "citations": [
-        "Bocci V. (2006). Is it true that ozone is always toxic? The end of a dogma. Toxicol Appl Pharmacol. 216(3):493-504. https://pubmed.ncbi.nlm.nih.gov/16890971/"
-      ],
-      "imageUrl": null
-    },
-    {
-      "id": "ozon-tedavisinde-guvenlik",
-      "title": "Ozon Tedavisinde Güvenlik ve Uygun Olmayan Durumlar",
-      "summary": "Ozon tedavisinin güvenli uygulanması için gereken koşullar ve tedavinin uygun olmadığı durumlar hakkında bilgi.",
-      "content": "## Güvenli Uygulamanın Koşulları\n\nOzon tedavisi; sertifikalı medikal ozon jeneratörü, steril ve tek kullanımlık malzemeler ile ozona dayanıklı ekipman kullanılarak, uzman hekim tarafından uygulanmalıdır. Doz ve yöntem, hekim değerlendirmesi sonrası belirlenir.\n\n## Uygun Olmayan Durumlar\n\n- G6PD enzim eksikliği\n- Gebelik\n- Kontrolsüz hipertiroidi\n- Aktif kanama ve bazı pıhtılaşma bozuklukları\n- Ağır anemi\n- Ozona karşı aşırı duyarlılık\n\n## Olası Yan Etkiler\n\nUygulama yerinde geçici ağrı veya morarma, nadiren baş dönmesi görülebilir. Beklenmeyen bir belirti fark ederseniz hekiminize başvurun.",
-      "citations": [
-        "Smith NL, et al. (2017). Ozone therapy: an overview of pharmacodynamics, current research, and clinical utility. Med Gas Res. 7(3):212-219."
-      ],
-      "imageUrl": null
-    }
-  ],
+  "articles": [],
   "services": [],
   "videos": []
 }

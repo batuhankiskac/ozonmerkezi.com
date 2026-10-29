@@ -113,11 +113,9 @@ firebase deploy --only firestore:rules,storage
 
 ## Tohumlama (seed)
 
-`seed/content.json` içindeki başlangıç makalelerini (ve varsa hizmet/video
-kayıtlarını) Firestore’a yazar. Kimlikler JSON’daki `id` değerleridir
-(ör. `ozon-tedavisi-nedir`, `major-otohemoterapi`), böylece
-`/makaleler/ozon-tedavisi-nedir` gibi adresler çalışır. Kaynakçalar yayından
-önce hekim tarafından doğrulanmalıdır.
+`seed/content.json` içindeki kayıtları (makale, hizmet, video) Firestore’a
+yazar. Kimlikler JSON’daki `id` değerleridir. Dosya şu an boştur: makaleler
+admin panelinden eklenir.
 
 ```bash
 npm run seed -- --dry-run   # yazmadan ne yapılacağını listeler
