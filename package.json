@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "TOKIO_WORKER_THREADS=2 RAYON_NUM_THREADS=2 next build",
     "start": "UV_THREADPOOL_SIZE=1 NODE_OPTIONS=--v8-pool-size=1 next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",

@@ -50,6 +50,9 @@ const nextConfig: NextConfig = {
     root: path.resolve(__dirname),
   },
   experimental: {
+    // Hostinger 64 çekirdekli; varsayılan (çekirdek-1) build işçisi hesabın
+    // işlem sınırını (120) tek başına doldurur.
+    cpus: 1,
     inlineCss: true,
     serverActions: {
       // Görseller 5 MB'a kadar yüklenebilir; multipart ek yükü için pay bırakılır.
