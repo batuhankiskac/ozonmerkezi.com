@@ -80,14 +80,27 @@ export async function uploadImage(
   const imagePath = `${folder}/${Date.now()}-${safeBaseName}-${token}.webp`;
   const bucket = storage.bucket();
 
-  await bucket.file(imagePath).save(processed, {
-    resumable: false,
-    contentType: "image/webp",
-    metadata: {
-      cacheControl: "public,max-age=31536000,immutable",
-      metadata: { firebaseStorageDownloadTokens: token },
-    },
-  });
+  try {
+    await bucket.file(imagePath).save(processed, {
+      resumable: false,
+      contentType: "image/webp",
+      metadata: {
+        cacheControl: "public,max-age=31536000,immutable",
+        metadata: { firebaseStorageDownloadTokens: token },
+      },
+    });
+  } catch (error) {
+    // Bucket yoksa (Storage etkinleştirilmemiş) veya yetki yoksa admin'e
+    // genel hata yerine anlaşılır bir mesaj gösterilir.
+    const code = (error as { code?: unknown }).code;
+    if (code === 404 || code === 403) {
+      console.error("Firebase Storage yüklemesi başarısız:", error);
+      throw new FormError(
+        "Görsel yüklenemedi: Firebase Storage bu projede etkin değil. İçeriği görselsiz kaydedebilir ya da Storage'ı etkinleştirdikten sonra tekrar deneyebilirsiniz.",
+      );
+    }
+    throw error;
+  }
 
   const imageUrl =
     `https://firebasestorage.googleapis.com/v0/b/${bucket.name}/o/` +
